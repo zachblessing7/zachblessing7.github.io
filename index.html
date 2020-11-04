@@ -2,9 +2,101 @@
 <html>
     <head>
       <title>Zach's Website</title>
+      <style>
+    body {
+        background: rgb(200, 157, 123);
+        color: rgb(75, 111, 255);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(111, 7, 94);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+        border: 2px solid green;
+        border-radius: 50px 20px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: white;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+</style>
     </head>
     
     <body>
-      
+        <div id="all-contents"> 
+           <nav>
+              <h1>Zach's Drumming Website</h1>
+              <ul>
+                <li>
+                  <a href="index.html"> Home </a>
+                </li>
+                <li>
+                  <a href="portfolio.html"> Portfolio </a>
+                </li>
+              </ul>
+           </nav>
+
+           <main>
+              <div class="sidebar">
+                <img src=https://media-exp1.licdn.com/dms/image/C4E03AQHz5r3aETF-zw/profile-displayphoto-shrink_200_200/0?e=1609977600&v=beta&t=bYzulwAAjl0oG1iBGNcVzLDW48X0aUJjTZOm5HSGwUQ>
+              </div>
+
+              <div class="content">
+                <h2>Zachary Blessing</h2>
+                <p>Technical Support Staff Member</p>
+                <div id="interests">
+                  <h3>Interests</h3>
+                  <ul>
+                    <li>Drumming</li>
+                    <li>Gaming</li>
+                    <li>Hiking</li>
+                  </ul>
+                </div>
+              </div>
+           </main>
+        </div>
     </body>
 </html>
