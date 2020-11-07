@@ -13,7 +13,16 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    //return a function with value parameter
+    return function (value) {
+        //if the value argument is greater than the base argument, return true
+    if (value > base) {
+        return true;
+    } else {
+        //if the value argument is less than the base argument, return false. 
+        return false;
+    }
+    };
     
     
     
@@ -27,6 +36,16 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
+      return function (value) {
+        //if the value argument is greater than the base argument, return true
+    if (value < base) {
+        return true;
+    } else {
+        //if the value argument is less than the base argument, return false. 
+        return false;
+    }
+    };
+    
     
     
     
@@ -41,7 +60,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function (value){
+       if (value[0].toLowerCase() === startsWith.toLowerCase()){
+          return true;
+       } else {
+           return false;
+       }
+    };
     
     
     
@@ -55,6 +80,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+    return function (value){
+       if (value[value.length - 1].toLowerCase() === endsWith.toLowerCase()){
+          return true;
+       } else {
+           return false;
+       }
+    };
     
     
     
@@ -64,15 +96,24 @@ function createEndsWithFilter(endsWith) {
 
 /** 
  * Given an Array of Strings and a Function designed to modify a String, 
- * return an Array of the Strings, modified.
+ * return the Array of the Strings, modified.
  * 
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // Input: an array of strings called strings ===> ['a', 'b', 'c']
+    // Function going inside of modify ===> function(string) { return string.toUpperCase(); })).to.eql(['A', 'B', 'C']);
+    var arrayToHoldResultsFromModify = [];   
+    // loop through strings
+    for(var i = 0; i < strings.length; i++)      {
+        // pass the item[i] of the array strings to the modify functions and push the results
+        // to our array data structure using push
+        arrayToHoldResultsFromModify.push(modify(strings[i]));
+    }
+    //return the array after it has been modified
+    return arrayToHoldResultsFromModify;
     
     
     // YOUR CODE ABOVE HERE //
@@ -89,10 +130,17 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+     // loop through strings
+    for(var i = 0; i < strings.length; i++)    {
+                
+     // pass the item[i] of the array strings to the test function
+    var testResult = test(strings[i]);
+    if(!testResult) {
+        return false;
+        }
+    } 
+    return true;
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -107,3 +155,10 @@ if((typeof process !== 'undefined') &&
     module.exports.modifyStrings = modifyStrings;
     module.exports.allStringsPass = allStringsPass;   
 }
+
+
+
+
+
+
+

@@ -35,7 +35,12 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    //make contact should return an object with the person contact info
+    return {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast,
+    };
 } 
 
 
@@ -43,15 +48,25 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
-    
+    var contacts = [];
+    var fullName = makeContact(nameFirst, nameLast);
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        }, 
+        addContact: function(contact){
+            //reference contacts array and add the contact argument into the array
+            contacts.push(contacts);
+        },
+        findContact: function(fullName){
+           if (fullName === contacts){
+               return 
+           }
+            }
         }
     }
-}
+
 
 
 
