@@ -61,9 +61,9 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     return function (value){
-       if (value[0].toLowerCase() === startsWith.toLowerCase()){
+       if (value[0].toLowerCase() === startsWith.toLowerCase()){ //if the parameter value index 0 of the string forced to lowercase strictly equals the start with single character lower case, return true.
           return true;
-       } else {
+       } else {                                                  //if the string does not start with the letter that is the same as the startsWith single character, return false. 
            return false;
        }
     };
@@ -81,9 +81,9 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     return function (value){
-       if (value[value.length - 1].toLowerCase() === endsWith.toLowerCase()){
+       if (value[value.length - 1].toLowerCase() === endsWith.toLowerCase()){ //take the last index of the value input and compare to the endsWith single character. if they strictly equal, return true. both are forced to lowercase so it can be strictly compared.
           return true;
-       } else {
+       } else {                                                             // if the last index of the string and the endsWith single character do not strictly equal, return false. 
            return false;
        }
     };

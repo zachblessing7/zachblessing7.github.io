@@ -14,7 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    //Use the .length function to return number of characters in the parameter. 
+    //Use the .length function to return number of characters in the parameter string in function length(). 
 return string.length;
 
     // YOUR CODE ABOVE HERE //
@@ -25,6 +25,8 @@ return string.length;
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
+    //this code will return whatever value is passed into the toLowerCase function's parameter string.
+    //.toLowerCase will return the string but force it into lowercase. 
     return string.toLowerCase();
 
 
@@ -36,6 +38,7 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
+    //this code will return the value passed into parameter string of function toUpperCase and force the string to Capitalize. 
     return string.toUpperCase();
 
 
@@ -57,7 +60,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-   return string.split(' ').join('-').toLowerCase();
+    //there are a few ways to accomplish this task. I chose to take the input string parameter, split the string by the ' ' (space) which then puts each part of the string into separate strings inside of an array.
+    //then take the strings and join it to one string separated by a dash (-). Finally, .toLowerCase will take our new string joined by a dash and force the string to lowercase.
+   return string.split(' ').join('-').toLowerCase(); 
     
     // YOUR CODE ABOVE HERE //
 }
@@ -76,6 +81,10 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    //Need to create an if statment that compare the string and see if it starts with the value in the char parameter of the beginsWith function.
+    //If stmt in our own words: look at index 0 of the string> force this letter to lowercase> compare that **lowercase** letter to the value stored in the char parameter which is also forced to lowercase to strictly compare the two.
+    //If the above statement passes the test--in other words, if the first letter of the string strictly equals the value stored in the char parameter--- return true.
+    //If the first letter of the string does NOT match the value in the parameter char, return false.
    if (string[0].toLowerCase() === char.toLowerCase()){
        return true;
    } else {
@@ -100,6 +109,10 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    //This is very similar to the prompt above. We are going to use an if else statement to return either true or false. 
+    //The difference here is that we are comparing the last letter of the string to the value in the parameter char of the endsWith function. 
+    //the if statement in our own words --- take the last index of the value passed in the string parameter [string.length - 1] force this last letter to lowercase and compare it to the value passed into the char parameter. 
+    //if the last letter of the string STRICTLY equals the value passed into the char parameter --- return true. If the last letter of the string and the value passed to the char parameter do NOT equal --- return false. 
     if (string[string.length - 1].toLowerCase() === char.toLowerCase()){
         return true;
     } else {
@@ -117,6 +130,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // This return statment takes the parameters stringOne and stringTwo values and adds them together as one string.
+    // so we are asking for two separate strings to be added together (concatenated) and put into one single string. 
     return stringOne + stringTwo;
 
 
@@ -135,8 +150,8 @@ function concat(stringOne, stringTwo) {
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var args = Array.from(arguments);
-    return args.join('');
+    var args = Array.from(arguments);  //delcaring variable args and assigning it an array that will house all the arguments passed through it. 
+    return args.join(''); // takes the new array of values and joins them together as one string. this string has no spaces. 
 
     // YOUR CODE ABOVE HERE //
 }
@@ -152,9 +167,9 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    if (stringOne.length > stringTwo.length){
+    if (stringOne.length > stringTwo.length){ // this conditional stmt says that if the length of string one is greater than string two, to return stringOne. 
         return stringOne;
-    } else {
+    } else {                                  // If the first conditional if stmt is false, then return stringTwo. This takes care of both possiblities of either stringOne or stringTwo being longer. 
         return stringTwo;
     }
 
@@ -176,11 +191,11 @@ function sortAscending(stringOne, stringTwo) {
     // return stringTwo.localeCompare(stringOne);
     
     // OTHER WAY TO DO THIS PROBLEM
-    if (stringOne < stringTwo){
+    if (stringOne < stringTwo){      // if stringOne is higher than stringTwo alphabetically, then return the value 1
         return 1;
-    } else if (stringOne > stringTwo){
+    } else if (stringOne > stringTwo){ //if the oposite is true, return stringOne
         return -1;
-    } else {
+    } else {                        // if both strings are equal in terms of alphabetical order, return 0
         return 0;
     }
 }
@@ -199,7 +214,13 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-     return stringOne.localeCompare(stringTwo);
+     if (stringOne > stringTwo){      // if stringOne is less than stringTwo alphabetically, then return the value 1
+        return 1;
+    } else if (stringOne < stringTwo){ //if the oposite is true, return stringOne
+        return -1;
+    } else {                        // if both strings are equal in terms of alphabetical order, return 0
+        return 0;
+    }
 
 
 

@@ -21,11 +21,11 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    let msg = "";
-    for (var x = input.length - 1; x >= 0; x-- ){
-      msg += input[x];
+    var msg = "";  // declaring variable msg and assigning the value of an empty string. This will collect the output. 
+    for (var x = input.length - 1; x >= 0; x-- ){ // created a for loop that starts at the last index of the string and decrements down until the index >= 0. 
+      msg += input[x]; // the code here is stating that we want to concatenate the input indexs as the for loop runs through the string. starts at last index and moves down by one until reaching 0.
     } 
-    return msg;
+    return msg; //returning the variable msg now will display the string from our input parameter and display each index in reverse order into the empty string we created for msg. 
     
     
     

@@ -14,9 +14,9 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-   if(Array.isArray(value)){
+   if(Array.isArray(value)){  //check if the array is an array value. return true
        return true;
-   } else {
+   } else {  //if not an array return false
        return false;
    }
     
@@ -111,24 +111,27 @@ function isCollection(value) {
  
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-     if (Array.isArray(value)){ 
-        return 'array';
-    } else if(value instanceof Date) {
-        return 'date';
-    } else if(value === null){
+     
+    if(value instanceof Date) { //if the value passed in is a date, return the string date.
+        return 'date'; 
+    } else if(value === null){ //if the value passed in is null, return the string null. null is considered an object in Javascript so we mush put the object conditional stmt after this.
         return 'null';
-    } else if (typeof value === 'object'){
+    } else if (value === 'object' || value === "{}"){ //if the value passed in is an object or {}, return the string Object.
         return 'object';
-    } else if(value === true || value === false) {
+    } else if (Array.isArray(value)){ //if the value passed in is an array, return the string array.
+        return 'array';
+    } else if(value === true || value === false) { //if the value passed in is ture OR false, return the string boolean.
         return 'boolean';
-    } else if(typeof value === function(){}){
+    } else if(value === function(){}){ //if the value passed in is a function, return the string function.
         return 'function';
-    } else if(value === ''){
+    } else if(value === ''){ //if the value passed in is a string, return the string 'string'.
         return 'string';
-    } else if(typeof value === Number()){
+    } else if(value === Number()){ //if the value passed in is a number, return the string number.
         return 'number';
-    }else{
-        return 'undefined';
+    } else if((value === undefined) || (value === 'undefined')){ //if the value passed in is undefined or the string 'undefined', return the string 'string'
+        return 'string';
+    } else { //for any other data type passed through, return the typeOf the value that was passed in. 
+        return typeof value;
     }
     
     

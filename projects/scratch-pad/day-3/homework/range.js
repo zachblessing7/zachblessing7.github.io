@@ -22,66 +22,30 @@
  *  c. you'll wanna make use of the push() method of Array.
  */
 function range(start, end) {
-    // YOUR CODE GOES BELOW HERE //
-    var reverse = false;
-    var arrayToHoldResults = [];
+    //YOUR CODE GOES BELOW HERE //
     
-    if (start > end){
-        reverse = true;
         
-    }
-    
-    // var first = start;
-    // var last = end;
-    // var reverse = false;
-    // var arrayToHoldResults = [];
-    // if(first > last){
-    //     reverse = true; 
-    //     first = end;
-    //     last = start;
-    // }
-    // for (var i = first; i <= last; i++){
-    //     arrayToHoldResults.push(i);
-    // }
-    // if (reverse === true){
-    //     arrayToHoldResults.reverse();
-    // }
-    
-    
-    
-    
-    
-    
-    
-    // printRange(number1, number2);
-    //   var startNumber = number1;
-    //   var endNumber = number2;
-    //   var reverse = false;
-    //   var arrayToHoldResults = [];
+      var startNumber = start; //setting up variables so we can later switch the start and finish values. 
+      var endNumber = end;
+      var reverse = false; // setting reverse to false so that the code knows that this is false now and then we can make it true later and return the array in reverse order. 
+      var arrayToHoldResults = [];
        
-    //   if(number1 > number2) {
-    //     reverse = true;
-    //     startNumber = number2;
-    //     endNumber = number1;
-    //   }
+      if(start > end) { // conditional stmt to say that if the start number is greater than the end number, set reverse equal to true and switch the start number to the value end holds and same for the end number variable.
+        reverse = true;
+        startNumber = end;
+        endNumber = start;
+      }
       
-    //   for (var i = startNumber; i <= endNumber; i++) {
-    //       arrayToHoldResults.push(i);
-    //   }   
+      for (var i = startNumber; i <= endNumber; i++) { //this will loop over the array of numbers and push them into our arrayToHoldResults array. start and end numbers are inclusive. 
+          arrayToHoldResults.push(i); //pushes the values into our array in ascending order. 
+      }   
       
-    //   if(reverse === true) {
-    //     arrayToHoldResults.reverse();
-    //   }
-    
-    
-    
-    
-    
-    
-    // var array = [];
-    // for (var i = 0; i <= array.length; i++){
-    //     array.push[i];
-    // }
+      if(reverse === true) { //conditional stmt stating that if reverse strictly equals true, then take the array of numbers and list them in reverse or descending order. 
+        arrayToHoldResults.reverse();
+      }
+    return arrayToHoldResults; //returns the array after the conditional stmts are tested. 
+
+
     
     
     

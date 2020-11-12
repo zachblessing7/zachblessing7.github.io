@@ -17,7 +17,9 @@
  */
 function print(value) {
   // YOUR CODE BELOW HERE //
-  console.log(value);
+  //console.log() will print the value passed into the value paramater of function print();
+
+  console.log(value);// prints to the console --> value that is passed in. 
   
   
   // YOUR CODE ABOVE HERE //
