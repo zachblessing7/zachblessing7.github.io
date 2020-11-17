@@ -11,6 +11,8 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// Need to create a new object called animal. From there, we need to use dot and bracket notation to add different key value pairs/properties. 
+// Also need to create a key called noises and make the value an empty array
 var animal = {};
 animal.species = 'bird';
 animal['name'] = 'tweety';
@@ -20,6 +22,8 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// Need to use different methods like .push, .unshift, and bracket notation to add noise values into the noises array.
+// using the .length we can add the noise to the last open position of the array.
 var noises = [];
 noises[0] = 'chirp';
 noises.push('tweet');
@@ -33,6 +37,7 @@ console.log(noises);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//assign the noises property on animal to the new noises array.
 animal.noises = noises;
 animal.noises.push('cluck');
 console.log(animal);
@@ -60,6 +65,7 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//need to push our animal object into the animals array. push created animals into the animals array.
 animals = [];
 animals.push(animal);
 console.log(animals);

@@ -38,7 +38,11 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 // Should take an object and return all its string values in a string each separated with a space
 function valuesToString(object) {
-    console.log(Object.values(object).join(" "));
+   if(Object.values(object) === {} || Object.values(object) === '{}'){
+       Object.values(object).slice(3);
+       console.log("line 43 " + Object.values(object));
+   }
+    console.log("line 42 " + Object.values(object).join(" "));
    return Object.values(object).join(" ");
 }
 
@@ -107,6 +111,13 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+//Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false.
+string.split(" ");
+if(string.includes(word)){
+    return true;
+} else {
+    return false;
+}
 
 }
 
@@ -115,6 +126,11 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+//Should take a name and an object and add the name to the object's friends array then return the object"
+//Add the name to the object friends array.
+//friends is key in object //name push into array //return whole object
+object.friends.push(name);
+return object;
 
 }
 
@@ -123,14 +139,44 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+if (Object.values(object).length === 0 || Object.values(object).length === '0'){
+    return false;
+ }else {
+         return object.friends.includes(name);
 }
-
+}
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+//loop through array and utilizing the <name> parameter friends array as reference. If someone is not in the persons friend array 
+//add them to the notFriends array. 
+let notFriends = [];
+
+for(let i = 0; i < array.length; i++){
+// if the object we are currently at is equal our name parameter ignore.
+//AND
+//if the objec we're currently at is inside of the <name> parameter array ignore. 
+    if(array[i]['name'] === name || array[i]['name'].includes(name)){
+        
+    } else{
+        //if it doesnt pass those two conditions add to notFriends
+        notFriends.push(array[i]['name']);
+    }
+}
+    
+  return notFriends;  
+    
+    
+    
+    
+    
+    
+    
+//  for (var i = 0; i <= array.length - 1; i++){
+//      console.log("line 135 " + array[i].name.push());
+//  }
 
 }
 
@@ -139,23 +185,62 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+//Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it.
+// object = {a: "one", b: "two", "hokey": false};
+// assert.deepEqual(updateObject(object, "b", "three"), {a:"one", b:"three", hokey: false});
+    // if(Object.key(object) === key){
+    //   var test = value;
+    //   var test2 = key;
+    //   console.log("this is the test " + object.test2[test]);
+    //   console.log(object);
+    //   console.log(key);
+    //   console.log(value);
+    }
 
-}
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+//Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array>"
+//var object = {a: "one", b: "two", "hokey": false};
+//removeProperties(object, ["a","hokey"]);
+//assert.deepEqual(object, {b: "two"});
+
+
+//loop through object and compare keys to in array of strings
+//for in loop
+
+for (let key in object){
+    //if key is inside of array we will delete it from object.
+    if(array.includes(key)){
+        delete object[key];
+    }
+}
+//wait until the for loop is finished -- then return it
+return object;
 
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+//Should take an array and return an array with all the duplicates removed
+let newArray = [];
+array.forEach((c) => {
+    if (!newArray.includes(c)) {
+        newArray.push(c);
+    }
+});
 
+console.log(newArray);
+return newArray;
 }
 
 //////////////////////////////////////////////////////////////////////
